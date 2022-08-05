@@ -64,7 +64,8 @@ class Ui_Login(object):
         email=(self.email.text())
         senha=(self.senha.text())
         login_creat(email,senha)
-
+    def botao_criar(self):
+        
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
