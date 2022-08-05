@@ -24,7 +24,7 @@ class Ui_Login(object):
         self.email.setObjectName("email")
         self.senha = QtWidgets.QLineEdit(self.centralwidget)
         self.senha.setGeometry(QtCore.QRect(60, 80, 131, 22))
-        self.senha.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
+        self.senha.setEchoMode(QtWidgets.QLineEdit.EchoMode.PasswordEchoOnEdit)
         self.senha.setObjectName("senha")
         self.tx_email = QtWidgets.QLabel(self.centralwidget)
         self.tx_email.setGeometry(QtCore.QRect(10, 50, 49, 16))
