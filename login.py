@@ -8,8 +8,12 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from Login_qt6.bancodedados import login, login_creat
+
 
 class Ui_Login(object):
+
+
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(463, 216)
@@ -31,6 +35,8 @@ class Ui_Login(object):
         self.login = QtWidgets.QPushButton(self.centralwidget)
         self.login.setGeometry(QtCore.QRect(260, 120, 75, 24))
         self.login.setObjectName("login")
+        self.login.clicked.connect(self.botao_login)
+
         self.Creat = QtWidgets.QPushButton(self.centralwidget)
         self.Creat.setGeometry(QtCore.QRect(180, 120, 75, 24))
         self.Creat.setObjectName("Creat")
@@ -54,6 +60,10 @@ class Ui_Login(object):
         self.login.setText(_translate("Login", "Login"))
         self.Creat.setText(_translate("Login", "Criar Conta"))
 
+    def botao_login(self):
+        a=(self.email.text())
+        s=(self.senha.text())
+        login_creat(a,s)
 
 if __name__ == "__main__":
     import sys

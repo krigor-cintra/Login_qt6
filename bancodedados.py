@@ -14,7 +14,7 @@ except mysql.connector.Error as erro:
 mycursor = mydb.cursor()
 
 def login_creat(email,senha):
-    mycursor.execute("insert into login (email , senha) values('%s','%s')"),email,senha
+    mycursor.execute("insert into login (email , senha0) values('%s','%s')"),email,senha
     mydb.commit()
     print(mycursor.rowcount, "record inserted.")
 
