@@ -61,9 +61,9 @@ class Ui_Login(object):
         self.Creat.setText(_translate("Login", "Criar Conta"))
 
     def botao_login(self):
-        a=(self.email.text())
-        s=(self.senha.text())
-        login_creat(a,s)
+        email=(self.email.text())
+        senha=(self.senha.text())
+        login_creat(email,senha)
 
 if __name__ == "__main__":
     import sys
