@@ -24,7 +24,7 @@ class Ui_Login(object):
         self.email.setObjectName("email")
         self.senha = QtWidgets.QLineEdit(self.centralwidget)
         self.senha.setGeometry(QtCore.QRect(60, 80, 131, 22))
-        self.senha.setEchoMode(QtWidgets.QLineEdit.EchoMode.PasswordEchoOnEdit)
+        self.senha.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.senha.setObjectName("senha")
         self.tx_email = QtWidgets.QLabel(self.centralwidget)
         self.tx_email.setGeometry(QtCore.QRect(10, 50, 49, 16))
@@ -61,11 +61,11 @@ class Ui_Login(object):
         self.Creat.setText(_translate("Login", "Criar Conta"))
 
     def botao_login(self):
-        email=(self.email.text())
-        senha=(self.senha.text())
-        login_creat(email,senha)
-    def botao_criar(self):
-        
+        a=(self.email.text())
+        s=(self.senha.text())
+        print(self.senha.text())
+        login_creat(a,s)
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

@@ -8,23 +8,35 @@ try:
       password="admin",
         database="programa1"
     )
+
+    mycursor = mydb.cursor()
+
 except mysql.connector.Error as erro:
     print(erro)
 
-mycursor = mydb.cursor()
+
+
 
 def login_creat(email,senha):
-    mycursor.execute("insert into login (email , senha0) values('%s','%s')"),email,senha
-    mydb.commit()
-    print(mycursor.rowcount, "record inserted.")
+    try:
+        mycursor.execute(f"insert into login (email , senha0) values('{email}','{senha}')")
+        mydb.commit()
+        print(mycursor.rowcount, "record inserted.")
+    except mysql.connector.Error as erro:
+        print(erro)
 
 
 
 def login(email,senha):
-    mycursor.execute(f"SELECT email from programa1.login  where email like '{email}'")
-    result=mycursor.fetchall()
-    if result != []:
-        mycursor.execute(f"SELECT senha0 from programa1.login  where email like '{email}'")
-        result = mycursor.fetchall()
-        if str(result[0]==senha):
-            print("login sucess")
+    try:
+        mycursor.execute(f"SELECT email from programa1.login  where email like '{email}'")
+        result=mycursor.fetchall()
+        if result != []:
+            mycursor.execute(f"SELECT senha0 from programa1.login  where email like '{email}'")
+            result = mycursor.fetchall()
+            if str(result[0]==senha):
+                print("login sucess")
+    except mysql.connector.Error as erro:
+        print(erro)
+
+
